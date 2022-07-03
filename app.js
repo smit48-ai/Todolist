@@ -158,6 +158,8 @@ app.get("/:customListName",function(req,res){
 //     res.render("about");
 // })
 
-app.listen(process.env.PORT || 3000,function(){
+app.set('port', process.env.PORT || 3000);
+
+app.listen(app.get('port'),function(){
     console.log("server is started");
 })
