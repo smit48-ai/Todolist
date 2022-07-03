@@ -3,3 +3,4 @@ npm-debug.log
 .DS_Store
 /Todolist v1 Starting Styles
 /__MACOSX
+/*.env
