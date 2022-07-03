@@ -9,7 +9,8 @@ const app=express();
 // var workitems=[];
 
 //connect to database
-var url=process.env.URL
+var url=process.env.URL;
+console.log(url);
 mongoose.connect(url,{useNewUrlParser:true});
 
 //just a schema
