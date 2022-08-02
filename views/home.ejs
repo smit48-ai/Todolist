@@ -1,0 +1,37 @@
+<%- include('header.ejs'); -%>
+<div class="box" id="heading">
+    <h1>TODOS</h1>
+</div>
+<div class="box">
+        <%var len=lists.length%>
+        
+        <%lists.forEach(function(lists){%>
+                <div class="homeitem">
+                    <div>
+                        <form action="/openlist" method="post">  
+                            <div class="part1" onclick="openlist(event)">
+                              <input type="hidden" value="<%=lists._id%>" name="listname">
+                              <img src="css/images/list.png" class="icons">
+                              <p ><%=lists.name%></p>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="/deletelist" method="post">   
+                            <input type="hidden" value="<%=lists._id%>" name="listname">           
+                            <img src="css/images/delete.png" class="icons"  onclick="deletelist(event)">
+                        </form>
+                    </div>
+                </div>
+                
+        <%});%>
+   
+  
+        <form class="Newitem" action="/newlist" method="post">
+            <input type="text" name="todo" placeholder="Make a New Todo" autocomplete="off">
+            <button type="submit" name="list" value="">+</button>
+        </form>
+  
+</div>
+
+<%- include('footer.ejs'); -%>
